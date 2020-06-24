@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan department">
+
+<!-- TESTNG2.XML -->
+<!-- TestNg Listeners -->
+	<listeners>
+		<listener class-name="testNgPackage.TestNgListeners"/>
+	</listeners>
+
+<!-- Parameterization from testng.xml file: we can define globals like url, username, password, etc. which are common along all the xml files -->
+  <parameter name="url" value="https://www.google.com" /> <!-- it is applicable to all the test cases as defined at suite level -->
+  
+  <test thread-count="5" name="Personal Loan">
+  
+  	<packages>
+  		<package name="testNgPackage"/> <!-- Executing the test cases at package level -->
+  	</packages>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->

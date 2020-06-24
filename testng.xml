@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan department" parallel="tests" thread-count="5"> 
+<!-- TESTNG.XML -->
+<!-- Run mutiple <test> together or in parallel in testNg then, add this to <suite>  parallel="tests" and give thread-count="5" if you want to run 5 test cases together at a time-->
+  
+  <test thread-count="5" parallel="classes" name="Personal Loan">
+  	<!-- Run classes parallely similiar as run tests parallely -->
+    <classes>
+      <class name="testNgPackage.testNgBasic"/>
+      <class name="testNgPackage.testNgBasic2"/>
+  	  <class name="testNgPackage.testNgBasic4">
+  	  	<methods>
+  	  		<include name="testMethod9"/>
+  	  		<!-- to include a particular test case to run, with include tag we can skip other methods from our test, and run only the include tag method of that class -->
+  	  	</methods>
+  	  </class>
+  
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="Car Loan">
+    <classes>
+      <class name="testNgPackage.testNgBasic3">
+      	<methods > <!-- test case name should start with a Module name so that to do better segregate -->
+      		<exclude name="Mobile.*"/> <!--Regular expression to exclude all methods starting with Mobile name -->
+      	</methods> <!-- to exclude a particular test case to run, with exclude tag we can skip methods from our test -->
+      </class>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+</suite> <!-- Suite -->
+
+
+
+<!-- 
+It is uesd to run all the test cases in a single click, without individually run each test case.
+testNg is used to have control on test cases, like which test  case should run and which should not run, it is like switch on/off test cases (Switching Mechanism).
+
+We can run specific test cases by using testng. (Switch on/off test cases)
+
+TestNg.xml Heirarchy:
+
+<suite>
+	<test>
+	
+		<classes>
+		
+			<class>
+			
+			</class>
+		
+		</classes>
+		
+	</test>
+	
+</suite>	
+
+
+Prioritizing the test cases with testNg:- 
+ -->
+ 
+ 
+ <!-- Generating Reports in TestNg:- (TestNg Report)
+ 
+ refresh project > Go to test output folder > index.html (TestNg Report)
+ 
+ 
+  -->
+ 
+ 
+ 

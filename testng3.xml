@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan department">
+<!-- TESTNG3.XML -->
+
+  
+  <test thread-count="5" name="Smoke">
+  	
+	<groups>
+		<run>
+			<include name="smoke"/> <!-- Run test cases which is in group named smoke -->
+			 <!-- <exclude name="smoke"/> Run test cases which is other than group named smoke -->
+		</run>
+	</groups>
+	
+	<classes>
+      <class name="testNgPackage.testNgBasic"/>
+      <class name="testNgPackage.testNgBasic2"/>
+  	  <class name="testNgPackage.testNgBasic3"/>
+  	  <class name="testNgPackage.testNgBasic4"/>
+  	</classes>
+
+  </test> <!-- Test -->
+ 
+</suite> <!-- Suite -->
+
+<!--  
+		Usage of Groups Functionality in TestNg:- 	 
+	 	Run custom test cases like 1 from each class, random test cases. 
+-->
